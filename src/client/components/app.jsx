@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import Journal from './Journal';
 import Calendar from './Calendar';
 import Sentiment from './Sentiment';
+
 
 
 export default class App extends Component {
@@ -19,10 +22,19 @@ export default class App extends Component {
   }
 
   getEntry(data){
-    //Show calendar
     //make call to DB to get past enteries
-    //display the days that have enteries logs in higlight
-    console.log("data from calendar" ,data)
+    console.log(data)
+    // axios.get('/pastEntry', {
+    //   params: {
+    //     data: data
+    //   }
+    // }).then(function (response) {
+    //   //set state to response past entry
+    //   //set state for sentiment analysis
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // })
   }
 
 
