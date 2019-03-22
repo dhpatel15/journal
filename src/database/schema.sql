@@ -22,7 +22,7 @@ analytical INT(11),
 confident INT(11),
 tentative INT(11),
 date DATE,
-PRIMARY KEY(`id`),
+PRIMARY KEY(`date`),
 FOREIGN KEY (user_id) REFERENCES user(user_name)
 );
 
