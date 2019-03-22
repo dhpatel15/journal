@@ -5,10 +5,10 @@ module.exports = {
 
   calendar: {
     get: function (req, res) {
-      let date = req.params
-      models.calender.get(data, (err, results) => {
+      let date = req.query.date
+      models.calender.get(date, (err, results) => {
         if (err) throw Error
-        res.status(200).send(data);
+        res.status(200).send(results);
       });
     }
   },
