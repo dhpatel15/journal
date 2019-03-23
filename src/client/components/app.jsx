@@ -34,7 +34,7 @@ export default class App extends Component {
 
   getEntry(data){
     //make call to DB to get past enteries
-    console.log("Dta",dddata)
+    console.log("Dta",data)
     // axios.get('/pastEntry', {
     //   params: {
     //     data: data
