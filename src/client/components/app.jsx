@@ -19,11 +19,22 @@ export default class App extends Component {
 
   updateJournal(data){
     //Store to DB and get sentiment analysis
+    console.log("updateJournal", data)
+    axios.post('/postJournal', {
+      data: data,
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
+
 
   getEntry(data){
     //make call to DB to get past enteries
-    console.log(data)
+    console.log("Dta",dddata)
     // axios.get('/pastEntry', {
     //   params: {
     //     data: data

@@ -17,11 +17,14 @@ export default class Journal extends Component {
   }
 
   handleSubmit(event) {
-    this.props.updateJournal(this.state.text)
     event.preventDefault();
+    const data = this.state.text;
+    console.log(data)
+    this.props.updateJournal(data)
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="container">
         <div>
@@ -31,7 +34,11 @@ export default class Journal extends Component {
           value={this.state.text}
           placeholder={"Whats on your mind today?"}
           onChange={this.handleChange}/>
-        <button type="submit" value="Submit" onClick={this.handleSubmit}>Submit</button>
+        <button 
+          className="button is-primary"
+          onClick={this.handleSubmit}>
+            Submit
+          </button>
         </div>
       </div>
     );

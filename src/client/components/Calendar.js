@@ -16,7 +16,7 @@ export default class Calendars extends Component {
   }
   
   onClickDay(value){
-    let dateVal = `${value.getFullYear()}-${value.getMonth()}-${value.getDate()}`
+    let dateVal = `${value.getFullYear()}-${value.getMonth() +1 }-${value.getDate()}`
     this.props.getEntry(dateVal)
   }
 
