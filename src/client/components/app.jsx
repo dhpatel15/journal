@@ -34,18 +34,17 @@ export default class App extends Component {
 
   getEntry(data){
     //make call to DB to get past enteries
-    console.log("Dta",data)
-    // axios.get('/pastEntry', {
-    //   params: {
-    //     data: data
-    //   }
-    // }).then(function (response) {
-    //   //set state to response past entry
-    //   //set state for sentiment analysis
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // })
+    console.log(data)
+    axios.get('/calendar', {
+      params: {
+        data: data
+      }
+    }).then(function (response) {
+      console.log(response)
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
 
