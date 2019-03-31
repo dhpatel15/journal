@@ -19,7 +19,7 @@ const walsonNLU = (data, callback) => {
     if (error) {
       console.log(error);
     } else {
-      callback(error, JSON.stringify(toneAnalysis, null, 2));
+      callback(error, toneAnalysis, null, 2);
     }
   });
 }

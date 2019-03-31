@@ -14,18 +14,21 @@ CREATE TABLE entries (
 id INT(11) AUTO_INCREMENT NOT NULL,
 journal_entry VARCHAR(8000),
 user_id VARCHAR(20),
-anger INT(11),
-fear INT(11),
-joy INT(11),
-sadness INT(11),
-analytical INT(11),
-confident INT(11),
-tentative INT(11),
+anger DECIMAL(7,6),
+fear DECIMAL(7,6),
+joy DECIMAL(7,6),
+sadness DECIMAL(7,6),
+analytical DECIMAL(7,6),
+confident DECIMAL(7,6),
+tentative DECIMAL(7,6),
 date DATE,
-PRIMARY KEY(`date`),
+PRIMARY KEY(`id`),
 FOREIGN KEY (user_id) REFERENCES user(user_name)
 );
 
+ALTER TABLE `entries` ADD INDEX `date`(`date`);
+
+ALTER TABLE entries ADD CONSTRAINT UC_entries UNIQUE (date, user_id);
 
 INSERT INTO user (id, user_name) VALUES (1, "dhpatel15");
 
