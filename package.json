@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack -w",
-    "server-dev": "nodemon ./src/server"
+    "webpack": "webpack -w -d",
+    "server-dev": "NODE_ENV=development nodemon ./src/server",
+    "build": "npm install && webpack -p",
+    "seed": "mysql -u root < ./src/database/schema.sql",
+    "start": "NODE_ENV=development pm2 start ./src/server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -21,8 +25,7 @@
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "sass": "^1.16.1",
+    "nodemon": "^1.18.10",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"
@@ -31,7 +34,6 @@
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "nodemon": "^1.18.10",
     "react": "^16.7.0",
     "react-calendar": "^2.18.1",
     "react-dom": "^16.7.0",

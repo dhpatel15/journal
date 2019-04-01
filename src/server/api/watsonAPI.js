@@ -1,12 +1,12 @@
 const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
-const credentials = require('../../../config.js')
+const {USERNAME, PASSWORD} = process.env.NODE_ENV === 'development' ? require('../../../config.js') : process.env;
 
 const walsonNLU = (data, callback) => {
   const toneAnalyzer = new ToneAnalyzerV3({
     version: '2018-10-20',
-    username: credentials.username,
-    password: credentials.password,
+    username: USERNAME,
+    password: PASSWORD,
     url: 'https://gateway.watsonplatform.net/tone-analyzer/api'
   });
 

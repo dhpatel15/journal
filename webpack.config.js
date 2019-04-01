@@ -2,7 +2,6 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
   entry: path.resolve(__dirname, 'src/client/index.jsx'),
   output: {
     filename: 'js/[name].bundle.js',
@@ -34,8 +33,6 @@ module.exports = {
           options: {},
         },
       ],
-    },
-  ]
+    }]
   },
-  devtool: 'source-map',
 };

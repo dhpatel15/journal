@@ -1,12 +1,7 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
+const { DBCREDENTIALS } = require('../../config')
 
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "journals",
-});
+const con = mysql.createConnection(DBCREDENTIALS);
 
 con.connect(function(err) {
   if (err) throw err;
