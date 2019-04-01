@@ -1,1 +1,3 @@
 # journal
+
+![](journal.gif)

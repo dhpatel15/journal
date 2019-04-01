@@ -14,6 +14,9 @@ module.exports = {
       template: 'src/client/index.html'
     })
   ],
+  performance: {
+    hints: false
+  },
   module: {
     rules: [{
       test: /.jsx?$/,
