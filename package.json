@@ -7,7 +7,7 @@
     "webpack": "webpack -w -d",
     "server-dev": "NODE_ENV=development nodemon ./src/server",
     "build": "npm install && webpack -p",
-    "seed": "mysql -u root < ./src/database/schema.sql",
+    "seed": "mysql -u root -p < src/database/schema.sql",
     "start": "NODE_ENV=development pm2 start ./src/server"
   },
   "keywords": [],
